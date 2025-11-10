@@ -1,0 +1,82 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.27373459355434776 0.03984522123410845 -0.9609795682721047 2.8636329465408457
+  position 0.7357993402763815 0.4268963339358584 0.4381254455861484
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0 0.1
+  children [
+    Solid {
+      translation 0 0.075 0.05
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 67.58400000000005
+            axis 0 1 0
+          }
+          device [
+            RotationalMotor {
+              name "motor"
+            }
+          ]
+          endPoint Solid {
+            rotation 0 1 0 4.752146928204181
+            children [
+              Solid {
+                translation 0 0.025 0.075
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 1 0 0
+                    }
+                    geometry Box {
+                      size 0.05 0.05 0.2
+                    }
+                  }
+                ]
+              }
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                }
+                geometry Box {
+                  size 0.05 0.05 0.05
+                }
+              }
+            ]
+          }
+        }
+      ]
+      name "solid(1)"
+    }
+    Solid {
+      children [
+        Transform {
+          children [
+            DEF shape Shape {
+              appearance PBRAppearance {
+              }
+              geometry Box {
+                size 0.1 0.1 0.2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  controller "arm_hand"
+}
